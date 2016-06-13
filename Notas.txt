@@ -1,0 +1,35 @@
+String methods:
+
+**It is conventional in Ruby to have '?' at the end of the
+ method if that method returns only boolean values.
+
+- .include?() = detects when the string includes 'Yoda'
+  ex: "[Luke:] I can’t believe it. [Yoda:] That is why you fail.".include?("Yoda")
+
+- .start_with? detects whether the string starts with 'Ruby'
+ ej:"Ruby is a beautiful language".start_with?("Ruby")
+
+- .end_with() = Detects whether the string ends with 'Ruby'.
+ example:"I can't work with any other language but Ruby".end_with?("Ruby")
+
+- .index() = finds the index of letters
+ "I am a Rubyist".index("R")
+
+ - .downcase, .upcase = converts the statement to downcase/ upcase.
+ ex:'This is Mixed CASE'.downcase
+
+ - .swapcase = swaps the case of every letter in the statement
+  ex: "ThiS iS A vErY ComPlEx SenTeNcE".swapcase
+
+- .split = splits the string on space
+ ex: 'Fear is the path to the dark side'.split
+
+- .concat(), +, << = concat strings.
+ ex:"Ruby"<<("Monk")
+- .sub() = replace a single subtrings
+ex: "I should look into your problem when I get time".sub('I','We')
+
+- .gsub() = replace all subtring.
+ ex: "I should look into your problem when I get time".gsub('I','We')
+
+ 
