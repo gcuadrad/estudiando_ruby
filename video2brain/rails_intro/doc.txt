@@ -1,0 +1,15 @@
+start server: rails start (-p change the port)
+
+Routes.rb: ./config/ Manage the routes
+
+Create:
+
+Controller: rails generate controller <controller-name> <file-name>
+
+Scaffold: Form generator: create forms, controllers and bd tables
+  rails generate scaffold <form-name> <id>:<type> <id>:<type> ...
+  ex: rails generate scaffold Post nombre:string titulo:string contenido:text
+
+  rake db:migrate: Run the migration script file contained in the migrate folder.
+
+  erb links: <%= link_to "Name",route_path %>
