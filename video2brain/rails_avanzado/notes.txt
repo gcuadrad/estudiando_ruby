@@ -1,0 +1,45 @@
+bundle install: instala el conjunto de depencencias de mi proyecto.
+
+jbuilder: es una gema integrada en rails que permite imprimir variables en formato
+json
+
+Archivos:
+gitignore:
+- .bundle: Descargas de las gemas
+- .sqlite3: son archivos de base de datos
+- log
+- tmp
+config.ru: Utiliza los servidores basados en rack para generar servidores en ruby.
+Gemfile: Lista las gamas instaladas y en que ambiente se utlizan.
+Gemfile.lock: lista las dependencias de cada gema y sus versiones. Se asegura que no sobrescribas tus gemas.
+Rakefile: gerar tareas dentro de ambiente de rails y linea de comandos.
+README.doc: La documentación para instalar tu proyecto.
+
+Carpetas:
+app:
+  - assets: contiene javascript, hojas de estilos, imágenes.
+  - Controller:
+
+mailers: Generar vistas de correos electrónicos.
+
+en consola:
+
+rake routes: Indica todas las rutas de la aplicación. ****Verbos http
+
+DSL: Lenguaje de dominio específico
+
+Los métodos dentro de los controllers se llaman acciones.
+Para agregar una nueva acción hay que incluirlo en el archivo routes
+para definirla hay que agregar una linea con : get 'nombre-controller#method'
+También hay que agregar la ruta en la que se realizará la solicitud ex "actions"
+
+redireccionar: redirect_to action: <method>,id: Post.first.id (si necesita id)
+Redireccionar es útil cuando recibes un post, delete, put que devuelva algo.
+render vista es algo así como traer una página sin redireccionar a ella.
+Renderear puede ser util cuando quieres hacer un parcial o una vista.
+
+
+Pasar variables a json
+ Dentro de la carpeta del controlador crear un archivo con el nombre de la accion
+ con el formato action.json.jbuilder
+ e incluir dentro json.<llave> @<variable> ex json.task @task
