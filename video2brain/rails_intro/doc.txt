@@ -4,7 +4,11 @@ Routes.rb: ./config/ Manage the routes
 
 Create:
 
-Controller: rails generate controller <controller-name> <file-name>
+Controller: rails generate controller <controller-name> <methods
+>
+
+rails destroy controller company
+
 
 Scaffold: Form generator: create forms, controllers and bd tables
   rails generate scaffold <form-name> <id>:<type> <id>:<type> ...
@@ -13,3 +17,40 @@ Scaffold: Form generator: create forms, controllers and bd tables
   rake db:migrate: Run the migration script file contained in the migrate folder.
 
   erb links: <%= link_to "Name",route_path %>
+
+
+
+objeto company_setup en carpeta model
+
+controller
+
+template vista
+
+value =~ /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i
+
+<%=  form_tag controller: 'companies', action: 'create' do %>
+  <div class="field">
+    <%= label_tag :company_name,'Nombre de compañia: ' %><br>
+    <%= text_field_tag :company_name %>
+  </div>
+  <div class="field">
+    <%= label_tag :admin_name,'Nombre de administrador: ' %><br>
+    <%= text_field_tag :admin_name %>
+  </div>
+  <div class="field">
+    <%= label_tag :admin_email,'Correo de administrador: ' %><br>
+    <%= email_field :admin_email, :admin_email %>
+  </div>
+  <div class="actions">
+    <%= submit_tag 'buscar'  %>
+  </div>
+<% end %>
+
+def test_params?(*params)
+  params.each do |param|
+    if param.nil? || param.empty?
+      return false
+    end
+  end
+  return true
+end

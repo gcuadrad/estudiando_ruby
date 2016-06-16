@@ -1,0 +1,201 @@
+/*
+  - You can skip the creation of some specific items setting its skip value to true.
+  - If you skip the company creation, you must enter a valid company_uuid.
+  - All the fields inside optional can be blank.
+  - Base tags definitions: KPI, BusinessUnit, ProductCategory and InstoreSection doesn't need to be entered here.
+  - In tags_definitions, you can add many tag_definitions as you needed.
+  - In a tag_definition's extra_fields you can add many extra_fields as you need as an array of strings (names).
+*/
+
+{
+  "company_setup": {
+    "skip": {
+      "company":                false,
+      "company_uuid":           "",
+      "company_admin":          false,
+      "base_tags_definitions":  false
+    },
+    "company": {
+      "name": "",
+      "optional": {
+        "kam_managed": false,
+        "website": "",
+        "phone":   "",
+        "address_street":  "",
+        "address_ext":     "",
+        "address_state":   "",
+        "address_city":    "",
+        "address_country": "",
+        "address_zipcode": ""
+      }
+    },
+    "company_admin": {
+      "name":     "",
+      "email":    "",
+      "language": "en"
+    },
+    "tags_definitions": [
+      {
+        "name":          "",
+        "internal_name": "",
+        "has_hierarchy": false,
+        "allow_weight":  false,
+        "extra_fields":  []
+      }
+    ]
+  },
+  "default_values": {
+    "ui_setting": {
+      "dashboard": {
+        "home": {
+          "visible": true,
+          "rows": [
+            {
+              "widgets": [
+                {
+                  "name": "dashboard/widgets/store-index",
+                  "visible": true
+                },
+                {
+                  "name": "dashboard/widgets/coverage",
+                  "visible": true
+                },
+                {
+                  "name": "dashboard/widgets/box-activities",
+                  "visible": true
+                }
+              ]
+            },
+            {
+              "widgets": [
+                {
+                  "name": "dashboard/widgets/store-index-evolution",
+                  "visible": true
+                },
+                {
+                  "name": "dashboard/widgets/visits-vs-users",
+                  "visible": true
+                }
+              ]
+            },
+            {
+              "widgets": [
+                {
+                  "name": "dashboard/widgets/top-users",
+                  "visible": true
+                },
+                {
+                  "name": "dashboard/widgets/top-stores",
+                  "visible": true
+                },
+                {
+                  "name": "dashboard/widgets/top-tags",
+                  "visible": true
+                }
+              ]
+            },
+            {
+              "widgets": [
+                {
+                  "name": "dashboard/widgets/latest-executions",
+                  "visible": true
+                }
+              ]
+            }
+          ]
+        },
+        "business": {
+          "visible": true,
+          "rows": [
+            {
+              "widgets": [
+                {
+                  "name": "dashboard/widgets/store-index-evolution-business",
+                  "visible": true
+                },
+                {
+                  "name": "dashboard/widgets/store-index",
+                  "visible": true
+                }
+              ]
+            }
+          ]
+        },
+        "activities": {
+          "visible": true,
+          "rows": [
+            {
+              "widgets": [
+                {
+                  "name": "dashboard/widgets/box-executions-evolution",
+                  "visible": true
+                }
+              ]
+            },
+            {
+              "widgets": [
+                {
+                  "name": "dashboard/widgets/list-executions",
+                  "visible": true
+                }
+              ]
+            }
+          ]
+        },
+        "gallery": {},
+        "accomplishment_matrix": {
+          "visible": true,
+          "rows": [
+            {
+              "widgets": [
+                {
+                  "name": "dashboard/widgets/box-accomplishment-matrix",
+                  "visible": true
+                }
+              ]
+            }
+          ]
+        },
+        "users": {
+          "visible": true
+        }
+      },
+      "dashboard_matrix": {
+        "accomplishment": {
+          "states": [
+            {
+              "name": "brands",
+              "typeFilter": [
+                "brand",
+                "brand-UUID"
+              ],
+              "current": "brand",
+              "next": "store",
+              "prev": null,
+              "order": 1,
+              "isPresent": false
+            },
+            {
+              "name": "stores",
+              "typeFilter": [
+                "store",
+                "store-UUID"
+              ],
+              "current": "store",
+              "next": "store",
+              "prev": "brand",
+              "order": 2,
+              "isPresent": false
+            }
+          ]
+        }
+      },
+      "workflow_starting_point": "WORKFLOW_STARTING_POINT_STORE"
+    },
+    "settings": {
+      "timezone": "America/Santiago",
+      "date_format": "%d-%m-%Y %H:%M:%S",
+      "time_zone_offset": "-03:00"
+    }
+  }
+}

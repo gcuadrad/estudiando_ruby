@@ -43,3 +43,35 @@ Pasar variables a json
  Dentro de la carpeta del controlador crear un archivo con el nombre de la accion
  con el formato action.json.jbuilder
  e incluir dentro json.<llave> @<variable> ex json.task @task
+
+------------ Pasos hechos creando un formulario ------------
+
+- Primero se necesita generar un controlador.
+rails generate controller <nombre-controlador> <acciones> <acciones>
+(Las acciones son métodos dento de la clase controlador.)
+
+- configurar el archivo routes agregando la linea:
+  resources :<nombre-controlador>, only [:new, :create, :index, :show, :assign, :update, :destroy]
+  Puedes borrar las opciones que no se utilizarán.
+
+Clase modelo:
+- Se crea una clase en modelo con el objeto y variables requeridas.
+
+- Se agregaron los includes requeridos para funcionar con ActiveModel:
+
+include ActiveModel::Validations
+include ActiveModel::Conversion
+extend ActiveModel::Naming
+
+- se agregan los attr_accessors a las variables.
+
+- se agregan las validaciones para el formulario requeridas.
+
+- se crea el construcor que recibe por parámetro un hash y a cada valor
+ y con cada valor:  send("#{name}=", value) *No se que es esto.
+
+ - se define un método persisted? que devuelve un valor falso * No se para que.
+
+
+kam_manage checkbox default true
+ui_settings textarea
