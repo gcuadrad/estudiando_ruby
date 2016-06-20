@@ -72,6 +72,26 @@ extend ActiveModel::Naming
 
  - se define un método persisted? que devuelve un valor falso * No se para que.
 
+Active record: gema que crea la estructura de la base de datos.
+  rails g model user:string lastname:string age:integer password:digest
+Crea el modelo vacio ya que puede leerlo en tiempo de ejecución.
+seed: crear objetos una vez que levantemos la aplicación.
+user = User.create([{name:'Gonzalo', lastname: 'Cuadra', password: 'Gonzalo.2016',
+   password_confirmation: 'Gonzalo.2016'}])
+Luego para lanzarlo se utiliza el comando: rake db:seed (Puede indicar que el número no está actualizado con la bd)
 
-kam_manage checkbox default true
-ui_settings textarea
+Gemas: luego de activarlas en el Gemfile hay que ejecutar en la consola el comando bundle para instalarla.
+
+
+Migraciones: permiten modificar la estructura de la bd sin tener que volver a crearla.
+
+Cuando usas el comando db:migrate estás actualizando el archivo schema.rb de la carpeta db con los datos de las
+nuevas migraciones ubicadas en la carpeta migrate.
+
+Nombres en plural y singular.
+Las tablas tienen nombres plurales a diferencia de las clases en singular.
+
+Validaciones:
+van normalmente en los modelos sintaxis:
+  validate <atributo>, <tipo de validacion> : <estado>
+ex: validate :user, presence: true

@@ -6,7 +6,7 @@ class MyClass
   end
 end
 
-my_instance = MyClass.new(20)
+my_instance  = MyClass.new(20)
 #Recibe un bloque
 my_instance.instance_eval {puts @value}
 #Ejecuta código como si estuviese dentro de la definición del objeto.
